@@ -3,7 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install aws-amplify@6.0.27 @aws-amplify/ui-react @aws-amplify/ui-components --force
+        - amplify init --yes
+        - amplify add auth --yes
+        - amplify push --yes
+        - npx amplify-category auth generate
     build:
       commands:
         - npm run build
