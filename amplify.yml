@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install aws-amplify @aws-amplify/ui-react
+        - npm install aws-amplify @aws-amplify/ui-react @aws-amplify/ui-components
     build:
       commands:
         - npm run build
