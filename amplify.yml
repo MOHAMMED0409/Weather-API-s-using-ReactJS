@@ -3,10 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
-        - amplify init --yes
-        - amplify add auth --yes
-        - amplify push --yes
-        - npx amplify-category auth generate
+        - npm install -g @aws-amplify/cli
+        - export AWS_ACCESS_KEY_ID=AKIA47CR3XORHYNYZVNB
+        - export AWS_SECRET_ACCESS_KEY=7MhuM4ZSvUAa9AP1RovmX7SJOXH3BcEq05FPo3yp
+        - amplify configure --yes
+        - amplify init --app https://github.com/your/repo.git --frontend javascript --framework react --config your-amplify-config.json --yes
     build:
       commands:
         - npm run build
