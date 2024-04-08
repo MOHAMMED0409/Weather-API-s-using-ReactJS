@@ -1,0 +1,19 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci
+        - npm run build
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
